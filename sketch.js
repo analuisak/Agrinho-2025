@@ -1,7 +1,8 @@
 xBolinha = 300;
 yBolinha = 200;
 diametro = 20;
-velocidadeBolinha = 6;
+velocidadexBolinha = 6;
+velocidadeyBolinha = 6;
 
 function setup() {
   createCanvas(600, 400);
@@ -16,6 +17,18 @@ function actorBolinha()
 {
   circle(xBolinha, yBolinha, diametro);
   
-  xBolinha += velocidadeBolinha;
-  yBolinha += velocidadeBolinha;
-}
+  xBolinha += velocidadexBolinha;
+  yBolinha += velocidadeyBolinha;
+  
+  if(xBolinha > width || xBolinha < 0)
+  {
+    velocidadexBolinha *= -1;
+  }
+  
+  if(yBolinha > height || yBolinha < 0)
+    {
+     velocidadeyBolinha *= -1; 
+    }
+    
+  
+}   
